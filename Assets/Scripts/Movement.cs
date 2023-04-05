@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //src: BloxyDev
@@ -27,7 +25,7 @@ public class Movement : MonoBehaviour
     CharacterController controller; // The character controller component attached to the player
     Vector2 currentDir; // The current movement direction
     Vector2 currentDirVelocity; // The current movement direction velocity
-    Vector3 velocity; // The current movement velocity
+    public Vector3 velocity; // The current movement velocity
 
     void Start()
     {
