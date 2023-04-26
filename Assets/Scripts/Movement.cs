@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 //src: BloxyDev
@@ -14,6 +15,7 @@ public class Movement : MonoBehaviour
     [SerializeField] LayerMask ground; // A layer mask representing the ground
 
     public float jumpHeight = 6f; // Jump height for the player
+    public int currentToolIndex = 0;
 
     float velocityY; // Vertical velocity of the player
     bool isGrounded; // Whether the player is on the ground or not
@@ -21,7 +23,7 @@ public class Movement : MonoBehaviour
     float cameraCap; // The camera's vertical tilt
     Vector2 currentMouseDelta; // The current mouse delta
     Vector2 currentMouseDeltaVelocity; // The current mouse delta velocity
-
+    public GameObject[] tools;
     CharacterController controller; // The character controller component attached to the player
     Vector2 currentDir; // The current movement direction
     Vector2 currentDirVelocity; // The current movement direction velocity
@@ -56,6 +58,40 @@ public class Movement : MonoBehaviour
 
         playerCamera.localEulerAngles = new Vector3(cameraCap, 0, 0); // Rotate the camera vertically
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity); // Rotate the player horizontally
+
+        // Check if the player scrolls the mouse wheel up
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            // Increase the current tool index by 1
+            currentToolIndex++;
+            if (currentToolIndex >= tools.Length)
+            {
+                currentToolIndex = 0;
+            }
+        }
+        // Check if the player scrolls the mouse wheel down
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            // Decrease the current tool index by 1
+            currentToolIndex--;
+            if (currentToolIndex < 0)
+            {
+                currentToolIndex = tools.Length - 1;
+            }
+        }
+
+        for (int i = 0; i < tools.Length; i++)
+        {
+            if (i == currentToolIndex)
+            {
+                tools[i].SetActive(true);
+            }
+            else
+            {
+                tools[i].SetActive(false);
+            }
+        }
+        Debug.Log(currentToolIndex);
     }
 
     void UpdateMove()

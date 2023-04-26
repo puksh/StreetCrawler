@@ -4,7 +4,7 @@ public class Flashlight : MonoBehaviour
 {
     private Light spotlight;
     private bool isOn = false;
-
+    public int toolIndex = 0;
     void Start()
     {
         spotlight = GetComponentInChildren<Light>();
@@ -14,8 +14,11 @@ public class Flashlight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            isOn = !isOn;
-            spotlight.enabled = isOn;
+            if (GetComponentInParent<Movement>().currentToolIndex == toolIndex)
+            {
+                isOn = !isOn;
+                spotlight.enabled = isOn;
+            }
         }
     }
 }
