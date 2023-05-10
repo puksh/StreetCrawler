@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     [SerializeField] LayerMask ground; // A layer mask representing the ground
 
     public float jumpHeight = 6f; // Jump height for the player
-    public int currentToolIndex = 0;
 
     float velocityY; // Vertical velocity of the player
     bool isGrounded; // Whether the player is on the ground or not
@@ -24,15 +23,22 @@ public class Movement : MonoBehaviour
     Vector2 currentMouseDelta; // The current mouse delta
     Vector2 currentMouseDeltaVelocity; // The current mouse delta velocity
     public GameObject[] tools;
-    CharacterController controller; // The character controller component attached to the player
+    CharacterController controller;
     Vector2 currentDir; // The current movement direction
     Vector2 currentDirVelocity; // The current movement direction velocity
     public Vector3 velocity; // The current movement velocity
+    int currentToolIndex;
+
+    // Access the ToolIndex variable of the ToolContainer component
+
+
+    // Use the currentToolIndex variable in your Movement script as needed
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
 
+        // Get the ToolContainer component attached to the same game object
         if (cursorLock)
         {
             Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the screen
@@ -42,9 +48,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        UpdateMouse(); // Update mouse movement
-        UpdateMove(); // Update player movement
+        UpdateMove();
+        UpdateMouse();
     }
+
 
     void UpdateMouse()
     {
@@ -59,39 +66,7 @@ public class Movement : MonoBehaviour
         playerCamera.localEulerAngles = new Vector3(cameraCap, 0, 0); // Rotate the camera vertically
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity); // Rotate the player horizontally
 
-        // Check if the player scrolls the mouse wheel up
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
-            // Increase the current tool index by 1
-            currentToolIndex++;
-            if (currentToolIndex >= tools.Length)
-            {
-                currentToolIndex = 0;
-            }
-        }
-        // Check if the player scrolls the mouse wheel down
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            // Decrease the current tool index by 1
-            currentToolIndex--;
-            if (currentToolIndex < 0)
-            {
-                currentToolIndex = tools.Length - 1;
-            }
-        }
 
-        for (int i = 0; i < tools.Length; i++)
-        {
-            if (i == currentToolIndex)
-            {
-                tools[i].SetActive(true);
-            }
-            else
-            {
-                tools[i].SetActive(false);
-            }
-        }
-        Debug.Log(currentToolIndex);
     }
 
     void UpdateMove()
