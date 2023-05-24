@@ -11,7 +11,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 
 // basic WASD-style movement control
-public class FpsMovement : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     [SerializeField] private Camera headCam;
 

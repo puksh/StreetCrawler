@@ -11,7 +11,7 @@ public class ToolSwitcher : MonoBehaviour
     private void Start()
     {
         // Disable the second tool's renderer
-        tool2.GetComponent<Renderer>().enabled = false;
+        tool1.GetComponent<Renderer>().enabled = false;
     }
 
     public void SwitchTool()

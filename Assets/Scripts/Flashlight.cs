@@ -3,11 +3,12 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     private Light spotlight;
-    private bool isOn = false;
+    private bool isOn = true;
     public int toolIndex = 1;
     void Start()
     {
         spotlight = GetComponentInChildren<Light>();
+        spotlight.enabled = true;
     }
 
     void Update()
