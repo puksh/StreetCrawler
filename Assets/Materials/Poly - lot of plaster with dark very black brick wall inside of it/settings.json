@@ -1,0 +1,23 @@
+{
+  "prompt_text": "lot of plaster with dark very black brick wall inside of it",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static-dev.withpoly.com/v3/textures/patches/e0b2ab27-a957-4f0a-9e9a-2e749956a0c2.png",
+    "patch_id": "3jYEUFzadu"
+  },
+  "seamless_prompt_text": "lot of plaster with dark very black brick wall inside of it",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "lot of plaster with dark very black brick wall inside of it",
+  "upscale_resolution": 2048,
+  "is_seamless": true,
+  "pbr_mode": "organic",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true,
+  "pbr_generate_metallic": false
+}

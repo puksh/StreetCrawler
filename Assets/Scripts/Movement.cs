@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
 
     public float jumpHeight = 6f; // Jump height for the player
 
-    float velocityY; // Vertical velocity of the player
+    [SerializeField]  float velocityY; // Vertical velocity of the player
     bool isGrounded; // Whether the player is on the ground or not
 
     float cameraCap; // The camera's vertical tilt

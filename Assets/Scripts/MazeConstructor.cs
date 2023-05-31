@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class MazeConstructor : MonoBehaviour
@@ -57,7 +58,7 @@ public class MazeConstructor : MonoBehaviour
         DisplayMaze();
 
         PlaceStartTrigger(startCallback);
-        PlaceGoalTrigger(goalCallback);
+        PlaceMultipleGoalTriggers(10,goalCallback);
     }
 
 
@@ -206,6 +207,7 @@ public class MazeConstructor : MonoBehaviour
         tc.callback = callback;
     }
 
+    /*
     private void PlaceGoalTrigger(TriggerEventHandler callback)
     {
         GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -218,6 +220,30 @@ public class MazeConstructor : MonoBehaviour
 
         TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
         tc.callback = callback;
+    }
+    */
+    private void PlaceMultipleGoalTriggers(int count, TriggerEventHandler callback)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GameObject bugGrassPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Materials/BugGrass.prefab");
+
+            // Create a new instance of the BugGrass prefab
+            GameObject go = Instantiate(bugGrassPrefab);
+            go.name = "Treasure";
+            go.tag = "Generated";
+
+
+            // Set the cube's position using the calculated coordinates
+            go.transform.position = new Vector3(goalCol * hallWidth, 2f, goalRow * hallWidth);
+
+            // Customize cube properties
+            go.GetComponent<BoxCollider>().isTrigger = true;
+
+            // Attach the TriggerEventRouter component and set the callback
+            TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
+            tc.callback = callback;
+        }
     }
 
 

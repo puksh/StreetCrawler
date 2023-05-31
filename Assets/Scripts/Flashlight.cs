@@ -4,7 +4,7 @@ public class Flashlight : MonoBehaviour
 {
     private Light spotlight;
     private bool isOn = true;
-    public int toolIndex = 1;
+    public int toolIndex;
     void Start()
     {
         spotlight = GetComponentInChildren<Light>();

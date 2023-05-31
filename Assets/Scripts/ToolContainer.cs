@@ -6,7 +6,7 @@ public class ToolSwitcher : MonoBehaviour
 {
     public Transform tool1;
     public Transform tool2;
-    public int currentToolIndex = 1;
+    public int currentToolIndex;
 
     private void Start()
     {
