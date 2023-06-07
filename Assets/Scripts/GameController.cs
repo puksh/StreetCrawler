@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    //1
-    [SerializeField] private playerController player;
+    
 
     private MazeConstructor generator;
 
@@ -33,15 +32,11 @@ public class GameController : MonoBehaviour
     //5
     private void StartNewMaze()
     {
-        generator.GenerateNewMaze(27, 29, OnStartTrigger, OnGoalTrigger);
+        generator.GenerateNewMaze(27, 29, OnStartTrigger);
 
-        float x = generator.startCol * generator.hallWidth;
-        float y = 1;
-        float z = generator.startRow * generator.hallWidth;
-        player.transform.position = new Vector3(x, y, z);
+        float x = generator.startCol * generator.hallWidth; float z = generator.startRow * generator.hallWidth;
 
         goalReached = false;
-        player.enabled = true;
 
     }
 
@@ -62,7 +57,6 @@ public class GameController : MonoBehaviour
         if (goalReached)
         {
             Debug.Log("Finish!");
-            player.enabled = false;
 
             Invoke("StartNewMaze", 4);
         }

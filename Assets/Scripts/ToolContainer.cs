@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class ToolSwitcher : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class ToolSwitcher : MonoBehaviour
     public Transform tool2;
     public int currentToolIndex;
 
-    private void Start()
+    private void Awake()
     {
         // Disable the second tool's renderer
         tool1.GetComponent<Renderer>().enabled = false;
@@ -36,10 +36,10 @@ public class ToolSwitcher : MonoBehaviour
             tool1.GetComponent<Renderer>().enabled = true;
         }
 
-        Debug.Log("Current tool index: " + currentToolIndex);
-        Debug.Log("Tool 1 is visible: " + tool1.GetComponent<Renderer>().enabled);
-        Debug.Log("Tool 2 is visible: " + tool2.GetComponent<Renderer>().enabled);
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+        //Debug.Log("Current tool index: " + currentToolIndex);
+        //Debug.Log("Tool 1 is visible: " + tool1.GetComponent<Renderer>().enabled);
+        //Debug.Log("Tool 2 is visible: " + tool2.GetComponent<Renderer>().enabled);
+        //Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 
     private void Update()
