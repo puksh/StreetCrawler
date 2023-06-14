@@ -5,3 +5,4 @@ https://www.youtube.com/watch?v=7wSqR4tHnz0 footsteps
 https://www.youtube.com/watch?v=KYehfX9fYxA pickup
 https://www.youtube.com/watch?v=bShmMZh84_s music
 https://sketchfab.com/3d-models/among-us-crewmate-rigged-14d6855a088d45a69751fa8d16583c82 among us
+https://github.com/baponkar/zombie-ai/ enemy ai

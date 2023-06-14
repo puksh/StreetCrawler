@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     //5
     private void StartNewMaze()
     {
-        generator.GenerateNewMaze(27, 29, OnStartTrigger);
+        generator.GenerateNewMaze(27, 29);
 
         float x = generator.startCol * generator.hallWidth; float z = generator.startRow * generator.hallWidth;
 

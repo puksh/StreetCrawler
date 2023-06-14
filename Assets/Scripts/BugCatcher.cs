@@ -26,11 +26,11 @@ public class BugCatcher : MonoBehaviour
             {
                 //Debug.Log("correct tool");
                 // Check if there is a nearest bug to catch
-                Debug.Log(IsPlayerLookingAtBug(nearestBug));
+                //Debug.Log(IsPlayerLookingAtBug(nearestBug));
                 if (nearestBug != null && IsPlayerLookingAtBug(nearestBug))
                 {
 
-                    Debug.Log("near bug and looking at");
+                    //Debug.Log("near bug and looking at");
                     // Catch the bug
                     CatchBug(nearestBug);
                 }
@@ -42,7 +42,6 @@ public class BugCatcher : MonoBehaviour
     {
         // Update the nearest bug when the player moves
         UpdateNearestBug();
-        //Debug.Log(nearestBug);
     }
 
     private void UpdateNearestBug()
@@ -100,6 +99,6 @@ public class BugCatcher : MonoBehaviour
 
         // Perform any additional actions or scoring logic here
 
-        Debug.Log("Bug caught! Score: " + score);
+        //Debug.Log("Bug caught! Score: " + score);
     }
 }

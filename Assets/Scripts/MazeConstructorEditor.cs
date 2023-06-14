@@ -13,6 +13,8 @@ public class MazeConstructorEditor : Editor
         {
             MazeConstructor mazeConstructor = (MazeConstructor)target;
             mazeConstructor.GenerateMazeInEditor(27, 29); // Adjust the sizeRows and sizeCols as desired
+            
+
         }
     }
 
