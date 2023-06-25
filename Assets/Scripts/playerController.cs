@@ -26,7 +26,10 @@ public class playerController : MonoBehaviour
 
     private float rotationVert = 0;
 
+
+
     private CharacterController charController;
+
 
     void Start()
     {
@@ -69,4 +72,6 @@ public class playerController : MonoBehaviour
             rotationVert, headCam.transform.localEulerAngles.y, 0
         );
     }
+
+    
 }

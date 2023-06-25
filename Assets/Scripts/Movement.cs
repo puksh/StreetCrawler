@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 //src: BloxyDev
@@ -22,15 +21,10 @@ public class Movement : MonoBehaviour
     float cameraCap; // The camera's vertical tilt
     Vector2 currentMouseDelta; // The current mouse delta
     Vector2 currentMouseDeltaVelocity; // The current mouse delta velocity
-    public GameObject[] tools;
     CharacterController controller;
     Vector2 currentDir; // The current movement direction
     Vector2 currentDirVelocity; // The current movement direction velocity
     public Vector3 velocity; // The current movement velocity
-    int currentToolIndex;
-
-    // Access the ToolIndex variable of the ToolContainer component
-
 
     // Use the currentToolIndex variable in your Movement script as needed
 
@@ -50,6 +44,7 @@ public class Movement : MonoBehaviour
     {
         UpdateMove();
         UpdateMouse();
+     
     }
 
 
@@ -94,4 +89,5 @@ public class Movement : MonoBehaviour
             velocityY = -8f;
         }
     }
+    
 }

@@ -8,10 +8,28 @@ public class ToolSwitcher : MonoBehaviour
     public Transform tool2;
     public int currentToolIndex;
 
+
+    string child1Name = "Lid";
+    string child2Name = "JarLight";
+    string flashlightLight = "WhiteLight";
+
+    private Renderer glassLid;
+    private Light jarLight;
+    private Light flashlight;
+
     private void Awake()
     {
-        // Disable the second tool's renderer
+        glassLid = tool1.Find(child1Name).GetComponent<Renderer>();
+        jarLight = tool1.Find(child2Name).GetComponent<Light>();
+        flashlight = tool2.Find(flashlightLight).GetComponent<Light>();
+
         tool1.GetComponent<Renderer>().enabled = false;
+        glassLid.enabled = false;
+        jarLight.enabled = false;
+
+        tool2.GetComponent<Renderer>().enabled = true;
+        flashlight.enabled = true;
+
     }
 
     public void SwitchTool()
@@ -20,20 +38,22 @@ public class ToolSwitcher : MonoBehaviour
         if (currentToolIndex == 0)
         {
             tool1.GetComponent<Renderer>().enabled = false;
-        }
-        else
-        {
-            tool2.GetComponent<Renderer>().enabled = false;
+            glassLid.enabled = false;
+            jarLight.enabled = false;
+
+            tool2.GetComponent<Renderer>().enabled = true;
+            //flashlight.enabled = true;
         }
 
         // Enable the new tool's renderer
-        if (currentToolIndex == 0)
-        {
-            tool2.GetComponent<Renderer>().enabled = true;
-        }
-        else
+        if (currentToolIndex == 1)
         {
             tool1.GetComponent<Renderer>().enabled = true;
+            glassLid.enabled = true;
+            jarLight.enabled = true;
+
+            tool2.GetComponent<Renderer>().enabled = false;
+            flashlight.enabled = false;
         }
 
         //Debug.Log("Current tool index: " + currentToolIndex);

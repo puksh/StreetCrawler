@@ -6,3 +6,5 @@ https://www.youtube.com/watch?v=KYehfX9fYxA pickup
 https://www.youtube.com/watch?v=bShmMZh84_s music
 https://sketchfab.com/3d-models/among-us-crewmate-rigged-14d6855a088d45a69751fa8d16583c82 among us
 https://github.com/baponkar/zombie-ai/ enemy ai
+https://www.youtube.com/watch?v=vczaMvB3OAM jar sound effect 
+https://github.com/ThisIsTechsin/Unity-Main-Menu main menu tempalte

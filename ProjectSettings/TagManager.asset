@@ -7,11 +7,13 @@ TagManager:
   - Bugs
   - Generated
   - Destination
+  - Jar
+  - Drain
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground

@@ -147,6 +147,7 @@ public class MazeConstructor : MonoBehaviour
             go = GameObject.CreatePrimitive(PrimitiveType.Cube);
             go.name = "Start Trigger";
             go.tag = "Generated";
+            go.layer = 6; //Ground
         }
 
         go.transform.position = new Vector3(startCol * hallWidth, 0.5f, startRow * hallWidth);
@@ -166,22 +167,6 @@ public class MazeConstructor : MonoBehaviour
         tc.callback = callback;
     }
 
-    private void PlaceMultipleGoalTriggers(int count, int sizeRows, int sizeCols)
-    {
-        for (var i = 0; i < count; i++)
-        {
-            var go = GameObject.Find("Treasure " + i);
-            if (go == null)
-            {
-                go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Materials/BugGrass.prefab");
-                go = Instantiate(go);
-                go.name = "Treasure " + i;
-                go.tag = "Generated";
-                //Debug.Log("Treasure"+1);
-            }
-            
-        }
-    }
 
    
 }
