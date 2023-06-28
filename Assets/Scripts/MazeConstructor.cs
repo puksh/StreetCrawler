@@ -9,7 +9,7 @@ public class MazeConstructor : MonoBehaviour
 
     [SerializeField] private Material mazeMat1;
     [SerializeField] private Material mazeMat2;
-    [SerializeField] private Material startMat;
+    //[SerializeField] private Material startMat;
 
     private List<Vector3> occupiedPositions = new List<Vector3>();
 
@@ -107,7 +107,7 @@ public class MazeConstructor : MonoBehaviour
                 DestroyImmediate(go);
     }
 
-    private void FindStartPosition()
+    /*private void FindStartPosition()
     {
         var maze = data;
         var rMax = maze.GetUpperBound(0);
@@ -138,8 +138,9 @@ public class MazeConstructor : MonoBehaviour
                 return;
             }
     }
+    */
 
-    private void PlaceStartTrigger(TriggerEventHandler callback)
+    /*private void PlaceStartTrigger(TriggerEventHandler callback)
     {
         var go = GameObject.Find("Start Trigger");
         if (go == null)
@@ -166,7 +167,7 @@ public class MazeConstructor : MonoBehaviour
 
         tc.callback = callback;
     }
-
+    */
 
    
 }

@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     private MazeConstructor generator;
     private bool transitioning = false;
     
+
     void Start()
     {
         generator = GetComponent<MazeConstructor>();
@@ -58,5 +59,7 @@ public class GameController : MonoBehaviour
         
         transitioning = false;
     }
+
+
     
 }

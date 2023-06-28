@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
 
     // Use the currentToolIndex variable in your Movement script as needed
 
+    public Vector3 teleportPosition = new Vector3(3f, 1.08f, 3.7f);
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -38,6 +39,8 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the screen
             Cursor.visible = false; // Hide the cursor
         }
+
+        transform.position = teleportPosition;
     }
 
     void Update()

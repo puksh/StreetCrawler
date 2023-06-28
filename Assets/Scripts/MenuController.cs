@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
     public string creditsURL;
     public GameObject[] menuItems;
 
+
+
     private void Start()
     {
 
@@ -36,15 +38,7 @@ public class MenuController : MonoBehaviour
         StartCoroutine(TransitionToScene("MazeScene"));
     }
 
-    private void Exit()
-    {
-        Debug.Log("Exiting the game...");
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
-    }
+
 
     private System.Collections.IEnumerator TransitionToScene(string sceneName)
     {
@@ -107,5 +101,15 @@ public class MenuController : MonoBehaviour
                 graphic.canvasRenderer.SetAlpha(alpha);
             }
         }
+    }
+
+    private void Exit()
+    {
+        Debug.Log("Exiting the game...");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

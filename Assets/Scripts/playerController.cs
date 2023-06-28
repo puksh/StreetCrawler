@@ -27,13 +27,15 @@ public class playerController : MonoBehaviour
     private float rotationVert = 0;
 
 
-
     private CharacterController charController;
 
 
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class playerController : MonoBehaviour
         MoveCharacter();
         RotateCharacter();
         RotateCamera();
+
     }
 
     private void MoveCharacter()
